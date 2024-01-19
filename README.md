@@ -28,4 +28,7 @@ Currently none.
 
 ## Support the project
 
-If you see potential in this project and want to help - feel free to contribute. Any help is welcome. You can contact me on Discord - **Avaray#7534**.
+If you see potential in this project and want to help - feel free to contribute. Any help is welcome.
+
+You can contact me on Discord: **Avaray#7534**  
+You can find me on servers like: [Astro Lounge](https://discord.gg/astrodotbuild) (EN), [Anthony's](https://discord.gg/RPmzgZMT) (EN), [Programowanko TSH.io](https://discord.gg/BWh98tnZ6Y) (PL).
