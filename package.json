@@ -1,0 +1,35 @@
+{
+  "name": "ts-barcode-generator",
+  "description": "Barcode generator created for self-learning purposes.",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "keywords": [
+    "barcode",
+    "generator",
+    "typescript",
+    "ean",
+    "ean13",
+    "upc",
+    "qr",
+    "qrcode",
+    "1d",
+    "2d"
+  ],
+  "author": {
+    "name": "Dawid Wąsowski",
+    "email": "deffqqq@gmail.com",
+    "url": "https://dav.one/"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Avaray/ts-barcode-generator"
+  },
+  "dependencies": {
+    "typescript": "^5.3.3"
+  }
+}
