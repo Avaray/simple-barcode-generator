@@ -1,3 +1,7 @@
+function binaryStringToArray(binaryString: string): number[] {
+  return binaryString.split('').map((char) => parseInt(char));
+}
+
 // Basically this function takes an array of 1s and 0s and converts it to an array of arrays of pairs of numbers.
 // Each group represents a bars of a certain width. Each group will be one <path> element in the SVG.
 // First number in the pair is the starting position of the bar, second number is the width of the bar.
@@ -47,3 +51,26 @@ function convertToGroupedPairs(bars: number[]): number[][][] {
 
   return Object.values(groupedPairs);
 }
+
+function generateSVG(groupedPairs: number[][][]): string {
+  const svgStart = '<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">';
+  const svgEnd = '</svg>';
+  const lineStart = '<line x1="';
+  const lineMiddle = '" y1="50%" x2="';
+  const lineEnd = '" y2="50%" stroke="black" stroke-width="';
+
+  let svgContent = '';
+
+  groupedPairs.forEach((group) => {
+    group.forEach((pair) => {
+      const position = pair[0];
+      const width = pair[1];
+
+      const line = `${lineStart}${position}${lineMiddle}${position + width}${lineEnd}${width}" />`;
+      svgContent += line;
+    });
+  });
+
+  return svgStart + svgContent + svgEnd;
+}
+
