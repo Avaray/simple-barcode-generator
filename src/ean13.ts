@@ -54,17 +54,9 @@ class EAN13BarcodeGenerator {
   }
 
   private static generateSVG(data: string): string {
-    const binaryRepresentation = EAN13BarcodeGenerator.generateBinaryRepresentation(
-      data
-    );
-
-    let svg = `<svg id="svgCode" version="1.1" viewBox="0 0 ${binaryRepresentation.length} 100" xmlns="http://www.w3.org/2000/svg" class="p-6 bg-base-content fill-current text-primary stroke-base-100">\n`;
-
-    // Currently I'm working on functions to use here.
-
-    svg += '</svg>';
-
-    return svg;
+    const binaryRepresentation = EAN13BarcodeGenerator.generateBinaryRepresentation(data);
+    // Currently I'm working here
+    return '';
   }
 
   static generateEAN13Barcode(data: string): string {
