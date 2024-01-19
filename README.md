@@ -6,6 +6,7 @@ Simple [barcode](https://en.wikipedia.org/wiki/Barcode) generator for frameworks
 
 - Creates responsive [SVG](https://en.wikipedia.org/wiki/SVG) graphics.
 - Is [TailwindCSS](https://tailwindcss.com/) friendly (you can easily apply colors).
+- Is Dependency-free
 
 ## Idea
 
