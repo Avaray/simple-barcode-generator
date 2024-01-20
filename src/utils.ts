@@ -41,10 +41,14 @@ export function convertToGroupedPairs(bars: number[]): number[][][] {
   return Object.values(groupedPairs);
 }
 
+// I need to fix this function. Calculations are wrong.
+// It seems code is working, but the SVG is being generated too wide.
 export function generateSimpleSvg1D(groupedPairs: number[][][]): string {
   // Calculte max width of SVG, then use that to calculate width of each rectangle
-  let maxWidth = groupedPairs.slice(-1)[0][0][0] + groupedPairs.slice(-1)[0][0][1];
-  let widthPerUnit = 100 / maxWidth;
+  const maxWidth = groupedPairs.slice(-1)[0][0][0] + groupedPairs.slice(-1)[0][0][1];
+  console.log(`maxWidth: ${maxWidth}`);
+  const widthPerUnit = 100 / maxWidth;
+  console.log(`widthPerUnit: ${widthPerUnit}`);
   const rectangles: string[] = [];
   groupedPairs.forEach((group) => {
     group.forEach((pair) => {
