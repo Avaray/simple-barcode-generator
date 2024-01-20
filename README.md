@@ -26,7 +26,7 @@ Currently none.
 - Code 128
 - QR
 
-## Materials you can check before use:
+## Materials you can check before use
 
 - [Color Selection for Barcode Symbols](https://www.barcode.graphics/upc-color-guide)
 - [Barcode Symbology](https://www.scandit.com/products/barcode-scanning/symbologies)

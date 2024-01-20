@@ -131,3 +131,5 @@ dist
 
 # My files
 /src/_*
+/_src/*
+TODO*

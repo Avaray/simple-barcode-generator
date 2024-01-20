@@ -1,4 +1,6 @@
-class EAN13BarcodeGenerator {
+import { convertBinaryStringToArray, convertToGroupedPairs, generateSimpleSvg1D } from '../utils';
+
+export default class EAN13 {
   private static readonly START_MARKER = '101';
   private static readonly MIDDLE_MARKER = '01010';
   private static readonly END_MARKER = '101';
@@ -33,39 +35,40 @@ class EAN13BarcodeGenerator {
 
     const leftParity = leftDigits
       .split('')
-      .map((digit) => EAN13BarcodeGenerator.LEFT_PARITY[digit])
+      .map((digit) => this.LEFT_PARITY[digit])
       .join('');
 
     const rightParity = rightDigits
       .split('')
-      .map((digit) => EAN13BarcodeGenerator.RIGHT_PARITY[digit])
+      .map((digit) => this.RIGHT_PARITY[digit])
       .join('');
 
-    return leftParity + EAN13BarcodeGenerator.MIDDLE_MARKER + rightParity;
+    return leftParity + this.MIDDLE_MARKER + rightParity;
   }
 
   private static generateBinaryRepresentation(data: string): string {
-    const parityData = EAN13BarcodeGenerator.calculateParity(data);
+    const parityData = this.calculateParity(data);
     return (
-      EAN13BarcodeGenerator.START_MARKER +
+      this.START_MARKER +
       parityData +
-      EAN13BarcodeGenerator.END_MARKER
+      this.END_MARKER
     );
   }
 
-  private static generateSVG(data: string): string {
-    const binaryRepresentation = EAN13BarcodeGenerator.generateBinaryRepresentation(data);
-    // Currently I'm working here
-    return '';
+  public static generate(data: string): string {
+    const binaryRepresentation = this.generateBinaryRepresentation(data);
+    const arrayRepresentation = convertBinaryStringToArray(binaryRepresentation);
+    const groupedPairs = convertToGroupedPairs(arrayRepresentation);
+    const svg = generateSimpleSvg1D(groupedPairs);
+    return svg;
   }
 
   static generateEAN13Barcode(data: string): string {
     if (!/^0?\d{12}$/.test(data)) {
       throw new Error('EAN-13 must be 12 digits.');
     }
-
-    return EAN13BarcodeGenerator.generateSVG(data);
+    return this.generate(data);
   }
+
 }
 
-export default EAN13BarcodeGenerator;
