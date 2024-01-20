@@ -30,6 +30,7 @@ Currently none.
 
 - [Color Selection for Barcode Symbols](https://www.barcode.graphics/upc-color-guide)
 - [Barcode Symbology](https://www.scandit.com/products/barcode-scanning/symbologies)
+- [Wikipedia.org/Barcode](https://en.wikipedia.org/wiki/Barcode)
 
 ## Support the project
 
