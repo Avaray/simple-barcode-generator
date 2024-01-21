@@ -3,6 +3,9 @@
 Simple [barcode](https://en.wikipedia.org/wiki/Barcode) generator for frameworks like [React](https://react.dev/), [Preact](https://preactjs.com/), [Qwik](https://qwik.builder.io/), [Svelte](https://svelte.dev/), etc.  
 Created to be lightweight and easy to use.
 
+> Generated 1D barcodes can be extended freely horizontally and vertically. By default, they will take on the size of the parent element.
+> 2D barcodes are scalable, preserve aspect ratio and their size depends on width of parent element.
+
 ## Why to use this library
 
 - Creates responsive [SVG](https://en.wikipedia.org/wiki/SVG) graphics.
@@ -15,12 +18,31 @@ There was no [browser API](https://caniuse.com/) that I could use for generating
 
 So, as part of my [TypeScript](https://www.typescriptlang.org/) learning journey (and programming in general), I decided to see if I could create such a generator with the help of [ChatGPT](https://chat.openai.com) and [GitHub Copilot](https://github.com/features/copilot). At the beginning, I will focus on the most important types of codes for me: [EAN13](https://en.wikipedia.org/wiki/International_Article_Number) and [QR](https://en.wikipedia.org/wiki/QR_code).
 
-## Usage
+# Usage
+
+### Common
 
 ```ts
 import TsBarcodeGenerator from 'ts-barcode-generator';
 
-console.log(TsBarcodeGenerator('1234567899992', 'EAN13'));
+const barcode = TsBarcodeGenerator('7423522549551', 'EAN13');
+
+console.log(barcode);
+```
+
+### React/Preact + TailwindCSS
+
+```ts
+import TsBarcodeGenerator from 'ts-barcode-generator';
+
+export const YourComponent = () => {
+  const barcode = TsBarcodeGenerator('7423522549551', 'EAN13');
+  return (
+    <div className='p-6 bg-white fill-current text-black'>
+      <div dangerouslySetInnerHTML={{ __html: barcode }} />
+    </div>
+  );
+};
 ```
 
 ## Supported code formats
@@ -29,9 +51,8 @@ console.log(TsBarcodeGenerator('1234567899992', 'EAN13'));
 
 ## Planned code formats (in the first place)
 
-- UPC
-- Code 128
 - QR
+- Simple 1D bardoces like UPC, Code 128, Code 39, etc.
 
 ## Materials you can check before use
 
