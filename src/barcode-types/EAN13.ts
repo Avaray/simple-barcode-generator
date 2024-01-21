@@ -55,7 +55,7 @@ export default class EAN13 {
     );
   }
 
-  public static generate(data: string): string {
+  private static Generate(data: string): string {
     const binaryRepresentation = this.generateBinaryRepresentation(data);
     const arrayRepresentation = convertBinaryStringToArray(binaryRepresentation);
     const groupedPairs = convertToPairs(arrayRepresentation);
@@ -63,11 +63,11 @@ export default class EAN13 {
     return svg;
   }
 
-  static generateEAN13Barcode(data: string): string {
-    if (!/^0?\d{12}$/.test(data)) {
+  public static generate(data: string): string {
+    if (!/^\d{12,13}$/.test(data)) {
       throw new Error('EAN-13 must be 12 digits.');
     }
-    return this.generate(data);
+    return this.Generate(data);
   }
 
 }
