@@ -3,7 +3,7 @@
 Simple [barcode](https://en.wikipedia.org/wiki/Barcode) generator for frameworks like [React](https://react.dev/), [Preact](https://preactjs.com/), [Qwik](https://qwik.builder.io/), [Svelte](https://svelte.dev/), etc.  
 Created to be lightweight and easy to use.
 
-> Generated 1D barcodes can be extended freely horizontally and vertically. By default, they will take on the size of the parent element.
+> Generated 1D barcodes can be resized freely horizontally and vertically. By default, they will take on the size of the parent element.
 > 2D barcodes are scalable, preserve aspect ratio and their size depends on width of parent element.
 
 ## Why to use this library
