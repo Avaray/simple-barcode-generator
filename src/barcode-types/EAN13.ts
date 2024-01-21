@@ -1,4 +1,4 @@
-import { convertBinaryStringToArray, convertToGroupedPairs, generateSimpleSvg1D } from '../utils';
+import { convertBinaryStringToArray, convertToPairs, generateSimpleSvg1D } from '../utils';
 
 export default class EAN13 {
   private static readonly START_MARKER = '101';
@@ -58,7 +58,7 @@ export default class EAN13 {
   public static generate(data: string): string {
     const binaryRepresentation = this.generateBinaryRepresentation(data);
     const arrayRepresentation = convertBinaryStringToArray(binaryRepresentation);
-    const groupedPairs = convertToGroupedPairs(arrayRepresentation);
+    const groupedPairs = convertToPairs(arrayRepresentation);
     const svg = generateSimpleSvg1D(groupedPairs);
     return svg;
   }
