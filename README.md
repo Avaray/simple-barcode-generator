@@ -14,7 +14,7 @@ Created to be lightweight and easy to use.
 
 ## Idea
 
-There was no [browser API](https://caniuse.com/) that I could use for generating [1D/2D barcodes](https://en.wikipedia.org/wiki/Barcode#Types_of_barcodes) in my projects. Among the libraries available on [NPM](https://www.npmjs.com/), I found only one decent library that is written in pure JavaScript - [bwip-js](https://github.com/metafloor/bwip-js), which unfortunately does not have [tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking). Bundled in my [Vite](https://vitejs.dev/) project it takes over 200 kilobytes [Gzipped](https://en.wikipedia.org/wiki/Gzip).
+There was no [browser API](https://caniuse.com/) that I could use for generating [1D/2D barcodes](https://en.wikipedia.org/wiki/Barcode#Types_of_barcodes) in my projects. Among the libraries available on [NPM](https://www.npmjs.com/), I found only one decent library that is written in pure JavaScript - [bwip-js](https://github.com/metafloor/bwip-js), which unfortunately does not have [tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking). Bundled in my [Vite](https://vitejs.dev/) project it takes about 230 kilobytes [Gzipped](https://en.wikipedia.org/wiki/Gzip).
 
 So, as part of my [TypeScript](https://www.typescriptlang.org/) learning journey (and programming in general), I decided to see if I could create such a generator with the help of [ChatGPT](https://chat.openai.com) and [GitHub Copilot](https://github.com/features/copilot). At the beginning, I will focus on the most important types of codes for me: [EAN13](https://en.wikipedia.org/wiki/International_Article_Number) and [QR](https://en.wikipedia.org/wiki/QR_code).
 
