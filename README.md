@@ -15,13 +15,20 @@ There was no [browser API](https://caniuse.com/) that I could use for generating
 
 So, as part of my [TypeScript](https://www.typescriptlang.org/) learning journey (and programming in general), I decided to see if I could create such a generator with the help of [ChatGPT](https://chat.openai.com) and [GitHub Copilot](https://github.com/features/copilot). At the beginning, I will focus on the most important types of codes for me: [EAN13](https://en.wikipedia.org/wiki/International_Article_Number) and [QR](https://en.wikipedia.org/wiki/QR_code).
 
+## Usage
+
+```ts
+import TsBarcodeGenerator from 'ts-barcode-generator';
+
+console.log(TsBarcodeGenerator('1234567899992', 'EAN13'));
+```
+
 ## Supported code formats
 
-Currently none.
+- EAN13
 
 ## Planned code formats (in the first place)
 
-- EAN13 (Work in progess)
 - UPC
 - Code 128
 - QR
