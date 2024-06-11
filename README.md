@@ -36,7 +36,7 @@ console.log(barcode);
 import TsBarcodeGenerator from 'ts-barcode-generator';
 
 export const YourComponent = () => {
-  const barcode = TsBarcodeGenerator('7423522549551', 'EAN13');
+  const barcode = TsBarcodeGenerator.generate('7423522549551', 'EAN13');
   return (
     <div className='p-6 bg-white fill-current text-black'>
       <div dangerouslySetInnerHTML={{ __html: barcode }} />
