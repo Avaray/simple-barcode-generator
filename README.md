@@ -49,10 +49,10 @@ export const YourComponent = () => {
 
 - EAN13
 
-## Planned code formats (in the first place)
+## Planned code formats
 
-- QR
 - Simple 1D bardoces like UPC, Code 128, Code 39, etc.
+- QR Code
 
 ## Materials you can check before use
 
