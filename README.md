@@ -25,7 +25,7 @@ So, as part of my [TypeScript](https://www.typescriptlang.org/) learning journey
 ```ts
 import TsBarcodeGenerator from 'ts-barcode-generator';
 
-const barcode = TsBarcodeGenerator('7423522549551', 'EAN13');
+const barcode = TsBarcodeGenerator.generate('7423522549551', 'EAN13');
 
 console.log(barcode);
 ```
