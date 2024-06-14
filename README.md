@@ -4,13 +4,17 @@ Simple [barcode](https://en.wikipedia.org/wiki/Barcode) generator for frameworks
 Created to be lightweight and easy to use.
 
 > Generated 1D barcodes can be resized freely horizontally and vertically. By default, they will take on the size of the parent element.
-> 2D barcodes are scalable, preserve aspect ratio and their size depends on width of parent element.
+> QR codes will be scalable, preserve aspect ratio and their size also depends on width of parent element.
 
 ## Why to use this library
 
 - Creates responsive [SVG](https://en.wikipedia.org/wiki/SVG) graphics.
 - Is [TailwindCSS](https://tailwindcss.com/) friendly (you can easily apply colors).
 - Is Dependency-free
+
+## Why you shouldn't use this library
+
+It might not be developed further. EAN13 might be the only format. Whether the project will be developed further depends on my willingness to work.
 
 ## Idea
 
