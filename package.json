@@ -15,10 +15,7 @@
     "ean",
     "ean13",
     "upc",
-    "qr",
-    "qrcode",
-    "1d",
-    "2d"
+    "1d"
   ],
   "author": {
     "name": "Dawid Wąsowski",
