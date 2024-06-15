@@ -64,11 +64,25 @@ export default class EAN13 {
   }
 
   public static generate(data: string): string {
-    if (!/^\d{12,13}$/.test(data)) {
-      throw new Error('EAN-13 must be 12 digits.');
-    }
+    if (!this.validate(data)) throw new Error("Invalid EAN-13 barcode");
     return this.Generate(data);
   }
 
-}
+  public static validate(data: string): boolean {
+    if (!/^\d{12,13}$/.test(data)) return false;
+    data = data.length === 12 ? `0${data}` : data;
+    const digits = data.split('').map(Number);
+    const checksum = this.calculateChecksum(digits.slice(0, 12));
+    return checksum === digits[12];
+  }
 
+  private static calculateChecksum(digits: number[]): number {
+    let sum = 0;
+    for (let i = 0; i < digits.length; i++) {
+      sum += digits[i] * (i % 2 === 0 ? 1 : 3);
+    }
+    const mod = sum % 10;
+    return mod === 0 ? 0 : 10 - mod;
+  }
+
+}
