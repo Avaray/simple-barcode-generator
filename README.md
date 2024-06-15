@@ -52,10 +52,11 @@ export const YourComponent = () => {
 ## Supported code formats
 
 - EAN13
+- UPC
 
 ## Planned code formats
 
-- Simple 1D barcodes like UPC, Code 128, Code 39, etc.
+- Simple 1D barcodes like Code 128, Code 39, etc.
 - QR Code (I already tried to implement it without success, it's challenging)
 
 ## Materials you can check before use
