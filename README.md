@@ -55,8 +55,8 @@ export const YourComponent = () => {
 
 ## Planned code formats
 
-- Simple 1D bardoces like UPC, Code 128, Code 39, etc.
-- QR Code
+- Simple 1D barcodes like UPC, Code 128, Code 39, etc.
+- QR Code (I already tried to implement it without success, it's challenging)
 
 ## Materials you can check before use
 
