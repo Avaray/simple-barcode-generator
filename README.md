@@ -4,7 +4,7 @@ Simple [barcode](https://en.wikipedia.org/wiki/Barcode) generator for frameworks
 Created to be lightweight and easy to use.
 
 > Generated 1D barcodes can be resized freely horizontally and vertically. By default, they will take on the size of the parent element.
-> QR codes will be scalable, preserve aspect ratio and their size also depends on width of parent element.
+> QR codes will be scalable, preserve aspect ratio and their size also depends on parent element.
 >
 > This library does not allow modifying the appearance of the generated SVG's (their colors, margins and size - like other libraries do). This should be done with CSS.
 
