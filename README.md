@@ -14,7 +14,7 @@ Created to be lightweight and easy to use.
 
 ## Why you shouldn't use this library
 
-It might not be developed further. EAN13 might be the only format. Whether the project will be developed further depends on my willingness to work.
+Whether the project will be developed further depends on my willingness to work. EAN13 might be the only supported format.
 
 ## Idea
 
