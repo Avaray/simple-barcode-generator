@@ -16,7 +16,7 @@ Created to be lightweight and easy to use.
 
 ## Why you shouldn't use this library
 
-Whether the project will be developed further depends on my willingness to work. EAN13 might be the only supported format.
+Whether the project will be developed further depends on my willingness to work. EAN13 and UPC might be the only supported formats.
 
 ## Idea
 
