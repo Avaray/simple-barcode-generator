@@ -8,7 +8,7 @@ Created to be lightweight, easy to use, and compatible with [Tailwind CSS](Tailw
 
 - Creates responsive [SVG](https://en.wikipedia.org/wiki/SVG) graphics.
 - Is [TailwindCSS](https://tailwindcss.com/) friendly (you can easily apply foreground and background colors).
-- You can use it in the browser ([ES2017](https://caniuse.com/?search=es2017)) and in runtimes such as
+- Can be used in the browser ([ES2017](https://caniuse.com/?search=es2017)) and in runtimes such as
   [Node](https://nodejs.org/), [Deno](https://deno.com/), and [Bun](https://bun.sh/).
 - Can be used in [React Native](https://reactnative.dev/) and [Expo](https://expo.dev/). Should be compatible with
   [NativeWind](https://www.nativewind.dev/) and [Unistyles](https://www.unistyl.es/).
