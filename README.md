@@ -30,7 +30,7 @@ decided to create my own library.
 #### Common
 
 ```ts
-import TsBarcodeGenerator from "ts-barcode-generator";
+import TsBarcodeGenerator from "simple-barcode-generator";
 
 const barcode = TsBarcodeGenerator.generate("7423522549551", "EAN13");
 
@@ -40,7 +40,7 @@ console.log(barcode);
 #### React/Preact + TailwindCSS
 
 ```ts
-import TsBarcodeGenerator from "ts-barcode-generator";
+import TsBarcodeGenerator from "simple-barcode-generator";
 
 export const YourComponent = () => {
   const barcode = TsBarcodeGenerator.generate("7423522549551", "EAN13");
