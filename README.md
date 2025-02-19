@@ -57,6 +57,7 @@ export const YourComponent = () => {
 - [EAN13](https://en.wikipedia.org/wiki/International_Article_Number)
 - [UPC](https://en.wikipedia.org/wiki/Universal_Product_Code)
 - [CODE128](https://en.wikipedia.org/wiki/Code_128)
+- [CODE39](https://en.wikipedia.org/wiki/Code_39)
 
 ## Materials you can check before use
 
