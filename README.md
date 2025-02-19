@@ -1,50 +1,51 @@
-# SVG Barcode Generator written in TypeScript
+# SVG Barcode Generator
 
-Simple [barcode](https://en.wikipedia.org/wiki/Barcode) generator for frameworks like [React](https://react.dev/), [Preact](https://preactjs.com/), [Qwik](https://qwik.builder.io/), [Svelte](https://svelte.dev/), etc.  
-Created to be lightweight and easy to use.
-
-> Generated 1D barcodes can be resized freely horizontally and vertically. By default, they will take on the size of the parent element.
-> QR codes will be scalable, preserve aspect ratio and their size also depends on parent element.
->
-> This library does not allow modifying the appearance of the generated SVG's (their colors, margins and size - like other libraries do). This should be done with CSS.
+Simple [barcode](https://en.wikipedia.org/wiki/Barcode) generator for frameworks like [React](https://react.dev/),
+[Preact](https://preactjs.com/), [Vue](https://vuejs.org/), [Svelte](https://svelte.dev/), etc.\
+Created to be lightweight, easy to use, and compatible with [Tailwind CSS](Tailwind).
 
 ## Why to use this library
 
 - Creates responsive [SVG](https://en.wikipedia.org/wiki/SVG) graphics.
-- Is [TailwindCSS](https://tailwindcss.com/) friendly (you can easily apply colors).
+- Is [TailwindCSS](https://tailwindcss.com/) friendly (you can easily apply foreground and background colors).
+- You can use it in the browser (currently targetting [ES2017](https://caniuse.com/?search=es2017)) as well as in your
+  favorite runtimes, such as [Node](https://nodejs.org/), [Deno](https://deno.com/), and [Bun](https://bun.sh/).
 - Is Dependency-free
 
 ## Why you shouldn't use this library
 
-Whether the project will be developed further depends on my willingness to work. EAN13 and UPC might be the only supported formats.
+- Whether the project will be developed further depends on my willingness to work. **EAN13**, **UPC** and **CODE128**
+  might be the only supported formats.
+- It has not been battle-tested yet.
 
 ## Idea
 
-There was no [browser API](https://caniuse.com/) that I could use for generating [1D/2D barcodes](https://en.wikipedia.org/wiki/Barcode#Types_of_barcodes) in my projects. Among the libraries available on [NPM](https://www.npmjs.com/), I found only one decent library that is written in pure JavaScript - [bwip-js](https://github.com/metafloor/bwip-js), which unfortunately does not have [tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking). Bundled in my [Vite](https://vitejs.dev/) project it takes about 230 kilobytes [Gzipped](https://en.wikipedia.org/wiki/Gzip).
+Among the libraries available on [NPM](https://www.npmjs.com/), none met my needs. Some lacked
+[tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking), others required complex configurations
+just to generate decent looking SVG, and some applied colors that couldn’t be easily overridden with Tailwind. So, I
+decided to create my own library.
 
-So, as part of my [TypeScript](https://www.typescriptlang.org/) learning journey (and programming in general), I decided to see if I could create such a generator with the help of [ChatGPT](https://chat.openai.com) and [GitHub Copilot](https://github.com/features/copilot). At the beginning, I will focus on the most important types of codes for me: [EAN13](https://en.wikipedia.org/wiki/International_Article_Number) and [QR](https://en.wikipedia.org/wiki/QR_code).
+## Usage
 
-# Usage
-
-### Common
+#### Common
 
 ```ts
-import TsBarcodeGenerator from 'ts-barcode-generator';
+import TsBarcodeGenerator from "ts-barcode-generator";
 
-const barcode = TsBarcodeGenerator.generate('7423522549551', 'EAN13');
+const barcode = TsBarcodeGenerator.generate("7423522549551", "EAN13");
 
 console.log(barcode);
 ```
 
-### React/Preact + TailwindCSS
+#### React/Preact + TailwindCSS
 
 ```ts
-import TsBarcodeGenerator from 'ts-barcode-generator';
+import TsBarcodeGenerator from "ts-barcode-generator";
 
 export const YourComponent = () => {
-  const barcode = TsBarcodeGenerator.generate('7423522549551', 'EAN13');
+  const barcode = TsBarcodeGenerator.generate("7423522549551", "EAN13");
   return (
-    <div className='p-6 bg-white fill-current text-black'>
+    <div className="p-6 bg-white fill-current text-black">
       <div dangerouslySetInnerHTML={{ __html: barcode }} />
     </div>
   );
@@ -53,13 +54,9 @@ export const YourComponent = () => {
 
 ## Supported code formats
 
-- EAN13
-- UPC
-
-## Planned code formats
-
-- Simple 1D barcodes like Code 128, Code 39, etc.
-- QR Code (I already tried to implement it without success, it's challenging)
+- [EAN13](https://en.wikipedia.org/wiki/International_Article_Number)
+- [UPC](https://en.wikipedia.org/wiki/Universal_Product_Code)
+- [CODE128](https://en.wikipedia.org/wiki/Code_128)
 
 ## Materials you can check before use
 
@@ -69,7 +66,6 @@ export const YourComponent = () => {
 
 ## Support the project
 
-If you see potential in this project and want to help - feel free to contribute. Any help is welcome.
+If you see potential in this project and want to help - feel free to contribute.
 
-You can contact me on Discord: **avaray\_**  
-You can find me on servers like: [Astro Lounge](https://discord.gg/astrodotbuild), [Anthony's](https://discord.gg/RPmzgZMT), [Programowanko TSH.io](https://discord.gg/BWh98tnZ6Y).
+You can contact me on [LinkedIn](https://www.linkedin.com/in/wasowsky/) or Discord: `avaray_`
