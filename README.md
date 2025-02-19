@@ -10,6 +10,8 @@ Created to be lightweight, easy to use, and compatible with [Tailwind CSS](Tailw
 - Is [TailwindCSS](https://tailwindcss.com/) friendly (you can easily apply foreground and background colors).
 - You can use it in the browser ([ES2017](https://caniuse.com/?search=es2017)) and in runtimes such as
   [Node](https://nodejs.org/), [Deno](https://deno.com/), and [Bun](https://bun.sh/).
+- Can be used in [React Native](https://reactnative.dev/) and [Expo](https://expo.dev/). Should be compatible with
+  [NativeWind](https://www.nativewind.dev/) and [Unistyles](https://www.unistyl.es/).
 - Is Dependency-free
 
 ## Why you shouldn't use this library
@@ -24,6 +26,11 @@ Among the libraries available on [NPM](https://www.npmjs.com/), none met my need
 [tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking), others required complex configurations
 just to generate decent looking SVG, and some applied colors that couldn’t be easily overridden with Tailwind. So, I
 decided to create my own library.
+
+## Where it can be used
+
+I see potential in applications related to [loyalty cards](https://en.wikipedia.org/wiki/Loyalty_program). Generating
+codes on the client side can slightly reduce the load on servers.
 
 ## Usage
 
