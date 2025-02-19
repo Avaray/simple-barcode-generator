@@ -25,8 +25,8 @@ Created to be lightweight, easy to use, and compatible with [Tailwind CSS](Tailw
 
 ## Why you shouldn't use this library
 
-- Whether the project will be developed further depends on my willingness to work.
 - It has not been battle-tested yet.
+- Whether the project will be developed further depends on my willingness to work.
 
 ## Idea
 
