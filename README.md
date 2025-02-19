@@ -4,6 +4,13 @@ Simple [barcode](https://en.wikipedia.org/wiki/Barcode) generator for frameworks
 [Preact](https://preactjs.com/), [Vue](https://vuejs.org/), [Svelte](https://svelte.dev/), etc.\
 Created to be lightweight, easy to use, and compatible with [Tailwind CSS](Tailwind).
 
+## Supported code formats
+
+- [ean_13](https://en.wikipedia.org/wiki/International_Article_Number)
+- [upc_a](https://en.wikipedia.org/wiki/Universal_Product_Code)
+- [code_128](https://en.wikipedia.org/wiki/Code_128)
+- [code_39](https://en.wikipedia.org/wiki/Code_39)
+
 ## Why to use this library
 
 - Creates responsive [SVG](https://en.wikipedia.org/wiki/SVG) graphics.
@@ -59,13 +66,6 @@ export const YourComponent = () => {
   );
 };
 ```
-
-## Supported code formats
-
-- [ean_13](https://en.wikipedia.org/wiki/International_Article_Number)
-- [upc_a](https://en.wikipedia.org/wiki/Universal_Product_Code)
-- [code_128](https://en.wikipedia.org/wiki/Code_128)
-- [code_39](https://en.wikipedia.org/wiki/Code_39)
 
 ## Materials you can check before use
 
