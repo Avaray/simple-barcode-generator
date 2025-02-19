@@ -8,8 +8,8 @@ Created to be lightweight, easy to use, and compatible with [Tailwind CSS](Tailw
 
 - Creates responsive [SVG](https://en.wikipedia.org/wiki/SVG) graphics.
 - Is [TailwindCSS](https://tailwindcss.com/) friendly (you can easily apply foreground and background colors).
-- You can use it in the browser (currently targetting [ES2017](https://caniuse.com/?search=es2017)) as well as in your
-  favorite runtimes, such as [Node](https://nodejs.org/), [Deno](https://deno.com/), and [Bun](https://bun.sh/).
+- You can use it in the browser ([ES2017](https://caniuse.com/?search=es2017)) and in runtimes such as
+  [Node](https://nodejs.org/), [Deno](https://deno.com/), and [Bun](https://bun.sh/).
 - Is Dependency-free
 
 ## Why you shouldn't use this library
