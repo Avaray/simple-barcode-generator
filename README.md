@@ -1,8 +1,7 @@
 # SVG Barcode Generator
 
-Simple [barcode](https://en.wikipedia.org/wiki/Barcode) generator for frameworks like [React](https://react.dev/),
-[Preact](https://preactjs.com/), [Vue](https://vuejs.org/), [Svelte](https://svelte.dev/), etc.\
-Created to be lightweight, easy to use, and compatible with [Tailwind CSS](Tailwind).
+Simple [barcode](https://en.wikipedia.org/wiki/Barcode) generator focused on scaleability and themability.\
+Created to be easy to use, lightweight, and compatible with [Tailwind CSS](Tailwind).
 
 ## Supported code formats
 
@@ -13,15 +12,18 @@ Created to be lightweight, easy to use, and compatible with [Tailwind CSS](Tailw
 
 ## Why to use this library
 
-- Creates responsive [SVG](https://en.wikipedia.org/wiki/SVG) graphics.
+- Creates responsive [SVG](https://en.wikipedia.org/wiki/SVG) graphics that adapt to parent container sizes.
 - Is [TailwindCSS](https://tailwindcss.com/) friendly (you can easily apply foreground and background colors).
 - Can be used in the browser ([ES2017](https://caniuse.com/?search=es2017)) and in runtimes such as
   [Node](https://nodejs.org/), [Deno](https://deno.com/), and [Bun](https://bun.sh/).
+- Can be used in frameworks like [React](https://react.dev/), [Vue](https://vuejs.org/), and
+  [Svelte](https://svelte.dev/).
 - Can be used in [React Native](https://reactnative.dev/) and [Expo](https://expo.dev/). Should be compatible with
   [NativeWind](https://www.nativewind.dev/) and [Unistyles](https://www.unistyl.es/).
 - Is compatible with
   [Barcode Detection API codes](https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API#supported_barcode_formats).
 - Is dependency-free.
+- Is easy to use.
 
 ## Why you shouldn't use this library
 
