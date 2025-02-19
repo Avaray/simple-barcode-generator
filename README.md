@@ -17,8 +17,8 @@ Created to be easy to use, lightweight, and compatible with [Tailwind CSS](Tailw
 - Is [TailwindCSS](https://tailwindcss.com/) friendly (you can easily apply foreground and background colors).
 - Can be used in the browser ([ES2017](https://caniuse.com/?search=es2017)) and in runtimes such as
   [Node](https://nodejs.org/), [Deno](https://deno.com/), and [Bun](https://bun.sh/).
-- Can be used in frameworks like [React](https://react.dev/), [Vue](https://vuejs.org/), and
-  [Svelte](https://svelte.dev/).
+- Can be used in frameworks like [React](https://react.dev/), [Vue](https://vuejs.org/), [Svelte](https://svelte.dev/),
+  etc.
 - Can be used in [React Native](https://reactnative.dev/) and [Expo](https://expo.dev/). Should be compatible with
   [NativeWind](https://www.nativewind.dev/) and [Unistyles](https://www.unistyl.es/).
 - Is compatible with
