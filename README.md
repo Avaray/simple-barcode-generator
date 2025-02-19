@@ -12,7 +12,9 @@ Created to be lightweight, easy to use, and compatible with [Tailwind CSS](Tailw
   [Node](https://nodejs.org/), [Deno](https://deno.com/), and [Bun](https://bun.sh/).
 - Can be used in [React Native](https://reactnative.dev/) and [Expo](https://expo.dev/). Should be compatible with
   [NativeWind](https://www.nativewind.dev/) and [Unistyles](https://www.unistyl.es/).
-- Is Dependency-free
+- Is compatible with
+  [Barcode Detection API codes](https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API#supported_barcode_formats).
+- Is dependency-free.
 
 ## Why you shouldn't use this library
 
@@ -39,7 +41,7 @@ codes on the client side can slightly reduce the load on servers.
 ```ts
 import TsBarcodeGenerator from "simple-barcode-generator";
 
-const barcode = TsBarcodeGenerator.generate("7423522549551", "EAN13");
+const barcode = TsBarcodeGenerator.generate("7423522549551", "ean_13");
 
 console.log(barcode);
 ```
@@ -50,7 +52,7 @@ console.log(barcode);
 import TsBarcodeGenerator from "simple-barcode-generator";
 
 export const YourComponent = () => {
-  const barcode = TsBarcodeGenerator.generate("7423522549551", "EAN13");
+  const barcode = TsBarcodeGenerator.generate("7423522549551", "ean_13");
   return (
     <div className="p-6 bg-white fill-current text-black">
       <div dangerouslySetInnerHTML={{ __html: barcode }} />
@@ -61,10 +63,10 @@ export const YourComponent = () => {
 
 ## Supported code formats
 
-- [EAN13](https://en.wikipedia.org/wiki/International_Article_Number)
-- [UPC](https://en.wikipedia.org/wiki/Universal_Product_Code)
-- [CODE128](https://en.wikipedia.org/wiki/Code_128)
-- [CODE39](https://en.wikipedia.org/wiki/Code_39)
+- [ean_13](https://en.wikipedia.org/wiki/International_Article_Number)
+- [upc_a](https://en.wikipedia.org/wiki/Universal_Product_Code)
+- [code_128](https://en.wikipedia.org/wiki/Code_128)
+- [code_39](https://en.wikipedia.org/wiki/Code_39)
 
 ## Materials you can check before use
 
