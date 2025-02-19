@@ -1,32 +1,32 @@
-import { convertBinaryStringToArray, convertToPairs, generateSimpleSvg1D } from '../utils';
+import { convertBinaryStringToArray, convertToPairs, generateSimpleSvg1D } from "../utils.ts";
 
 export default class EAN13 {
-  private static readonly START_MARKER = '101';
-  private static readonly MIDDLE_MARKER = '01010';
-  private static readonly END_MARKER = '101';
+  private static readonly START_MARKER = "101";
+  private static readonly MIDDLE_MARKER = "01010";
+  private static readonly END_MARKER = "101";
   private static readonly LEFT_PARITY: { [key: string]: string } = {
-    '0': '0001101',
-    '1': '0011001',
-    '2': '0010011',
-    '3': '0111101',
-    '4': '0100011',
-    '5': '0110001',
-    '6': '0101111',
-    '7': '0111011',
-    '8': '0110111',
-    '9': '0001011',
+    "0": "0001101",
+    "1": "0011001",
+    "2": "0010011",
+    "3": "0111101",
+    "4": "0100011",
+    "5": "0110001",
+    "6": "0101111",
+    "7": "0111011",
+    "8": "0110111",
+    "9": "0001011",
   };
   private static readonly RIGHT_PARITY: { [key: string]: string } = {
-    '0': '1110010',
-    '1': '1100110',
-    '2': '1101100',
-    '3': '1000010',
-    '4': '1011100',
-    '5': '1001110',
-    '6': '1010000',
-    '7': '1000100',
-    '8': '1001000',
-    '9': '1110100',
+    "0": "1110010",
+    "1": "1100110",
+    "2": "1101100",
+    "3": "1000010",
+    "4": "1011100",
+    "5": "1001110",
+    "6": "1010000",
+    "7": "1000100",
+    "8": "1001000",
+    "9": "1110100",
   };
 
   private static calculateParity(data: string): string {
@@ -34,14 +34,14 @@ export default class EAN13 {
     const rightDigits = data.slice(6);
 
     const leftParity = leftDigits
-      .split('')
+      .split("")
       .map((digit) => this.LEFT_PARITY[digit])
-      .join('');
+      .join("");
 
     const rightParity = rightDigits
-      .split('')
+      .split("")
       .map((digit) => this.RIGHT_PARITY[digit])
-      .join('');
+      .join("");
 
     return leftParity + this.MIDDLE_MARKER + rightParity;
   }
@@ -71,7 +71,7 @@ export default class EAN13 {
   public static validate(data: string): boolean {
     if (!/^\d{12,13}$/.test(data)) return false;
     data = data.length === 12 ? `0${data}` : data;
-    const digits = data.split('').map(Number);
+    const digits = data.split("").map(Number);
     const checksum = this.calculateChecksum(digits.slice(0, 12));
     return checksum === digits[12];
   }
@@ -84,5 +84,4 @@ export default class EAN13 {
     const mod = sum % 10;
     return mod === 0 ? 0 : 10 - mod;
   }
-
 }
