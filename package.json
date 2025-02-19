@@ -1,6 +1,6 @@
 {
   "name": "simple-barcode-generator",
-  "description": "Simple Barcode Generator for JS runtimes and Browsers",
+  "description": "Simple Barcode Generator for JavaScript runtimes and Browsers",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.cjs",
