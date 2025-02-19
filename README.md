@@ -7,6 +7,7 @@ Created to be easy to use, lightweight, and compatible with [Tailwind CSS](Tailw
 
 - [upc_a](https://en.wikipedia.org/wiki/Universal_Product_Code)
 - [ean_13](https://en.wikipedia.org/wiki/International_Article_Number)
+- [ean_8](https://en.wikipedia.org/wiki/International_Article_Number)
 - [code_128](https://en.wikipedia.org/wiki/Code_128)
 - [code_93](https://en.wikipedia.org/wiki/Code_93)
 - [code_39](https://en.wikipedia.org/wiki/Code_39)
