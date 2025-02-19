@@ -18,8 +18,7 @@ Created to be lightweight, easy to use, and compatible with [Tailwind CSS](Tailw
 
 ## Why you shouldn't use this library
 
-- Whether the project will be developed further depends on my willingness to work. **EAN13**, **UPC** and **CODE128**
-  might be the only supported formats.
+- Whether the project will be developed further depends on my willingness to work.
 - It has not been battle-tested yet.
 
 ## Idea
