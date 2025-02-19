@@ -1,6 +1,6 @@
 {
-  "name": "ts-barcode-generator",
-  "description": "Simple Barcode Generator",
+  "name": "simple-barcode-generator",
+  "description": "Simple Barcode Generator for JS runtimes and Browsers",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -19,22 +19,24 @@
   ],
   "keywords": [
     "barcode",
-    "generator",
-    "typescript",
+    "code-128",
+    "code",
+    "code128",
+    "ean-13",
     "ean",
     "ean13",
-    "upc",
-    "1d",
-    "code128"
+    "generator",
+    "typescript",
+    "upc"
   ],
   "author": {
-    "name": "Dawid Wąsowski",
+    "name": "Dawid Wasowski",
     "email": "deffqqq@gmail.com",
     "url": "https://dav.one/"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Avaray/ts-barcode-generator"
+    "url": "https://github.com/Avaray/simple-barcode-generator"
   }
 }
