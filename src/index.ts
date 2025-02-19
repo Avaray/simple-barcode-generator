@@ -1,19 +1,19 @@
-import EAN13 from "./barcode-types/EAN13.ts";
-import CODE128 from "./barcode-types/CODE128.ts";
-import CODE39 from "./barcode-types/CODE39.ts";
+import ean13 from "./barcode-types/ean_13.ts";
+import code128 from "./barcode-types/code_128.ts";
+import code39 from "./barcode-types/code_39.ts";
 
-type CodeTypes = "EAN13" | "UPC" | "CODE128" | "CODE39";
+type CodeTypes = "upc_a" | "ean_13" | "code_128" | "code_39";
 
 export default class TsBarcodeGenerator {
   public static generate(code: string, type: CodeTypes): string {
     switch (type) {
-      case "EAN13":
-      case "UPC":
-        return EAN13.generate(code);
-      case "CODE128":
-        return CODE128.generate(code);
-      case "CODE39":
-        return CODE39.generate(code);
+      case "upc_a":
+      case "ean_13":
+        return ean13.generate(code);
+      case "code_128":
+        return code128.generate(code);
+      case "code_39":
+        return code39.generate(code);
       default:
         throw new Error(`Unsupported barcode type: ${type}`);
     }
