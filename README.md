@@ -37,7 +37,7 @@ const barcode = TsBarcodeGenerator.generate("7423522549551", "EAN13");
 console.log(barcode);
 ```
 
-#### React/Preact + TailwindCSS
+#### React + TailwindCSS
 
 ```ts
 import TsBarcodeGenerator from "simple-barcode-generator";
