@@ -1,12 +1,111 @@
 import { convertBinaryStringToArray, convertToPairs, generateSimpleSvg1D } from "../utils.ts";
 
-interface Code128Character {
-  value: number;
-  pattern: string;
+// CODE128.ts
+interface CodeSet {
+  [key: string]: { value: number; pattern: string };
 }
 
-class CODE128 {
-  private static readonly CODE128_B: { [key: string]: Code128Character } = {
+export default class CODE128 {
+  private static readonly CODE128_A: CodeSet = {
+    "\u00C8": { value: 0, pattern: "11011001100" }, // NUL
+    "\u00C9": { value: 1, pattern: "11001101100" }, // SOH
+    "\u00CA": { value: 2, pattern: "11001100110" }, // STX
+    "\u00CB": { value: 3, pattern: "10010011000" }, // ETX
+    "\u00CC": { value: 4, pattern: "10010001100" }, // EOT
+    "\u00CD": { value: 5, pattern: "10001001100" }, // ENQ
+    "\u00CE": { value: 6, pattern: "10011001000" }, // ACK
+    "\u00CF": { value: 7, pattern: "10011000100" }, // BEL
+    "\u00D0": { value: 8, pattern: "10001100100" }, // BS
+    "\u00D1": { value: 9, pattern: "11001001000" }, // HT
+    "\u00D2": { value: 10, pattern: "11001000100" }, // LF
+    "\u00D3": { value: 11, pattern: "11000100100" }, // VT
+    "\u00D4": { value: 12, pattern: "10110011100" }, // FF
+    "\u00D5": { value: 13, pattern: "10011011100" }, // CR
+    "\u00D6": { value: 14, pattern: "10011001110" }, // SO
+    "\u00D7": { value: 15, pattern: "10111001100" }, // SI
+    "\u00D8": { value: 16, pattern: "10011101100" }, // DLE
+    "\u00D9": { value: 17, pattern: "10011100110" }, // DC1
+    "\u00DA": { value: 18, pattern: "11001110010" }, // DC2
+    "\u00DB": { value: 19, pattern: "11001011100" }, // DC3
+    "\u00DC": { value: 20, pattern: "11001001110" }, // DC4
+    "\u00DD": { value: 21, pattern: "11011100100" }, // NAK
+    "\u00DE": { value: 22, pattern: "11001110100" }, // SYN
+    "\u00DF": { value: 23, pattern: "11101101110" }, // ETB
+    "\u00E0": { value: 24, pattern: "11101001100" }, // CAN
+    "\u00E1": { value: 25, pattern: "11100101100" }, // EM
+    "\u00E2": { value: 26, pattern: "11100100110" }, // SUB
+    "\u00E3": { value: 27, pattern: "11101100100" }, // ESC
+    "\u00E4": { value: 28, pattern: "11100110100" }, // FS
+    "\u00E5": { value: 29, pattern: "11100110010" }, // GS
+    "\u00E6": { value: 30, pattern: "11011011000" }, // RS
+    "\u00E7": { value: 31, pattern: "11011000110" }, // US
+    " ": { value: 32, pattern: "11000110110" },
+    "!": { value: 33, pattern: "10100011000" },
+    '"': { value: 34, pattern: "10001011000" },
+    "#": { value: 35, pattern: "10001000110" },
+    "$": { value: 36, pattern: "10110001000" },
+    "%": { value: 37, pattern: "10001101000" },
+    "&": { value: 38, pattern: "10001100010" },
+    "'": { value: 39, pattern: "11010001000" },
+    "(": { value: 40, pattern: "11000101000" },
+    ")": { value: 41, pattern: "11000100010" },
+    "*": { value: 42, pattern: "10110111000" },
+    "+": { value: 43, pattern: "10110001110" },
+    ",": { value: 44, pattern: "10001101110" },
+    "-": { value: 45, pattern: "10111011000" },
+    ".": { value: 46, pattern: "10111000110" },
+    "/": { value: 47, pattern: "10001110110" },
+    "0": { value: 48, pattern: "11101110110" },
+    "1": { value: 49, pattern: "11010001110" },
+    "2": { value: 50, pattern: "11000101110" },
+    "3": { value: 51, pattern: "11011101000" },
+    "4": { value: 52, pattern: "11011100010" },
+    "5": { value: 53, pattern: "11011101110" },
+    "6": { value: 54, pattern: "11101011000" },
+    "7": { value: 55, pattern: "11101000110" },
+    "8": { value: 56, pattern: "11100010110" },
+    "9": { value: 57, pattern: "11101101000" },
+    ":": { value: 58, pattern: "11101100010" },
+    ";": { value: 59, pattern: "11100011010" },
+    "<": { value: 60, pattern: "11101111010" },
+    "=": { value: 61, pattern: "11001000010" },
+    ">": { value: 62, pattern: "11110001010" },
+    "?": { value: 63, pattern: "10100110000" },
+    "@": { value: 64, pattern: "10100001100" },
+    "A": { value: 65, pattern: "10010110000" },
+    "B": { value: 66, pattern: "10010000110" },
+    "C": { value: 67, pattern: "10000101100" },
+    "D": { value: 68, pattern: "10000100110" },
+    "E": { value: 69, pattern: "10110010000" },
+    "F": { value: 70, pattern: "10110000100" },
+    "G": { value: 71, pattern: "10011010000" },
+    "H": { value: 72, pattern: "10011000010" },
+    "I": { value: 73, pattern: "10000110100" },
+    "J": { value: 74, pattern: "10000110010" },
+    "K": { value: 75, pattern: "11000010010" },
+    "L": { value: 76, pattern: "11001010000" },
+    "M": { value: 77, pattern: "11110111010" },
+    "N": { value: 78, pattern: "11000010100" },
+    "O": { value: 79, pattern: "10001111010" },
+    "P": { value: 80, pattern: "10100111100" },
+    "Q": { value: 81, pattern: "10010111100" },
+    "R": { value: 82, pattern: "10010011110" },
+    "S": { value: 83, pattern: "10111100100" },
+    "T": { value: 84, pattern: "10011110100" },
+    "U": { value: 85, pattern: "10011110010" },
+    "V": { value: 86, pattern: "11110100100" },
+    "W": { value: 87, pattern: "11110010100" },
+    "X": { value: 88, pattern: "11110010010" },
+    "Y": { value: 89, pattern: "11011011110" },
+    "Z": { value: 90, pattern: "11011110110" },
+    "[": { value: 91, pattern: "11110110110" },
+    "\\": { value: 92, pattern: "10101111000" },
+    "]": { value: 93, pattern: "10100011110" },
+    "^": { value: 94, pattern: "10001011110" },
+    "_": { value: 95, pattern: "10111101000" },
+  };
+
+  private static readonly CODE128_B: CodeSet = {
     " ": { value: 0, pattern: "11011001100" },
     "!": { value: 1, pattern: "11001101100" },
     '"': { value: 2, pattern: "11001100110" },
@@ -102,55 +201,81 @@ class CODE128 {
     "|": { value: 92, pattern: "10101111000" },
     "}": { value: 93, pattern: "10100011110" },
     "~": { value: 94, pattern: "10001011110" },
+    "\u007F": { value: 95, pattern: "10111101000" }, // DEL
   };
 
-  private static readonly START_CODE_B = "11010010000";
+  private static readonly CODE128_C: CodeSet = {};
+  private static readonly START_A = "11010000100";
+  private static readonly START_B = "11010010000";
+  private static readonly START_C = "11010011100";
   private static readonly STOP_PATTERN = "1100011101011";
 
-  static validateInput(data: string): void {
-    if (!/^[\x20-\x7E]{1,80}$/.test(data)) {
-      throw new Error(
-        "Invalid CODE128-B characters. Only ASCII 32-126 are allowed.",
-      );
-    }
-  }
-
-  static calculateChecksum(data: string): number {
-    let sum = 104; // Start Code B value
-    data.split("").forEach((char, index) => {
-      sum += this.CODE128_B[char].value * (index + 1);
-    });
-    return sum % 103;
-  }
-
-  static generateBinary(data: string): string {
-    this.validateInput(data);
-
-    const checksum = this.calculateChecksum(data);
-    const checksumChar = Object.entries(this.CODE128_B).find(([, { value }]) => value === checksum)?.[1].pattern;
-
-    if (!checksumChar) {
-      throw new Error("Failed to find checksum character");
-    }
-
-    let binary = this.START_CODE_B;
-
-    for (const char of data) {
-      binary += this.CODE128_B[char].pattern;
-    }
-
-    binary += checksumChar;
-    binary += this.STOP_PATTERN;
-
-    return binary;
-  }
-
   static generate(data: string): string {
-    const binary = this.generateBinary(data);
-    const array = convertBinaryStringToArray(binary);
-    const pairs = convertToPairs(array);
-    return generateSimpleSvg1D(pairs);
+    const { startCode, encodedData, checksum } = this.autoEncode(data);
+    const binary = [
+      startCode.pattern,
+      ...encodedData.map((c) => c.pattern),
+      this.getPatternForValue(checksum),
+      this.STOP_PATTERN,
+    ].join("");
+
+    return generateSimpleSvg1D(convertToPairs(convertBinaryStringToArray(binary)));
+  }
+
+  private static autoEncode(data: string): {
+    startCode: { value: number; pattern: string };
+    encodedData: { value: number; pattern: string }[];
+    checksum: number;
+  } {
+    if (/^\d{2,}$/.test(data) && data.length % 2 === 0) {
+      return this.encodeC(data);
+    }
+    return this.encodeB(data);
+  }
+
+  private static encodeB(data: string) {
+    const start = { value: 104, pattern: this.START_B };
+    let sum = start.value;
+    const encoded = [];
+
+    for (let i = 0; i < data.length; i++) {
+      const char = data[i];
+      const entry = this.CODE128_B[char];
+      if (!entry) throw new Error(`Invalid CODE128-B character: ${char}`);
+
+      sum += entry.value * (i + 1);
+      encoded.push(entry);
+    }
+
+    const checksum = sum % 103;
+    return { startCode: start, encodedData: encoded, checksum };
+  }
+
+  private static encodeC(data: string) {
+    const start = { value: 105, pattern: this.START_C };
+    let sum = start.value;
+    const encoded = [];
+
+    for (let i = 0; i < data.length; i += 2) {
+      const pair = data.substr(i, 2);
+      const value = parseInt(pair, 10);
+      const pattern = this.getPatternForValue(value);
+
+      sum += value * (i / 2 + 1);
+      encoded.push({ value, pattern });
+    }
+
+    const checksum = sum % 103;
+    return { startCode: start, encodedData: encoded, checksum };
+  }
+
+  private static getPatternForValue(value: number): string {
+    // Search all code sets for the value
+    const find = (set: CodeSet) => Object.entries(set).find(([, entry]) => entry.value === value);
+
+    return find(this.CODE128_A)?.[1].pattern ||
+      find(this.CODE128_B)?.[1].pattern ||
+      find(this.CODE128_C)?.[1].pattern ||
+      this.STOP_PATTERN;
   }
 }
-
-export default CODE128;
