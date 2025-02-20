@@ -11,6 +11,8 @@ Created to be easy to use, lightweight, and compatible with [Tailwind CSS](Tailw
 - [code_128](https://en.wikipedia.org/wiki/Code_128)
 - [code_93](https://en.wikipedia.org/wiki/Code_93)
 - [code_39](https://en.wikipedia.org/wiki/Code_39)
+- [codabar](https://en.wikipedia.org/wiki/Codabar)
+- [itf](https://en.wikipedia.org/wiki/Interleaved_2_of_5)
 
 ## Why to use this library
 
@@ -22,8 +24,8 @@ Created to be easy to use, lightweight, and compatible with [Tailwind CSS](Tailw
   etc.
 - Can be used in [React Native](https://reactnative.dev/) and [Expo](https://expo.dev/). Should be compatible with
   [NativeWind](https://www.nativewind.dev/) and [Unistyles](https://www.unistyl.es/).
-- Is compatible with
-  [Barcode Detection API codes](https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API#supported_barcode_formats).
+- Names of formats are compatible with
+  [Barcode Detection API formats](https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API#supported_barcode_formats).
 - Is dependency-free.
 - Is easy to use.
 
