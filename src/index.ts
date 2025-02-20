@@ -1,12 +1,12 @@
-import ean_13 from "./barcode-types/ean_13.ts";
-import ean_8 from "./barcode-types/ean_8.ts";
-import code_128 from "./barcode-types/code_128.ts";
-import code_93 from "./barcode-types/code_93.ts";
-import code_39 from "./barcode-types/code_39.ts";
-import codabar from "./barcode-types/codabar.ts";
-import itf from "./barcode-types/itf.ts";
+import ean_13 from "./1d/ean_13.ts";
+import ean_8 from "./1d/ean_8.ts";
+import code_128 from "./1d/code_128.ts";
+import code_93 from "./1d/code_93.ts";
+import code_39 from "./1d/code_39.ts";
+import codabar from "./1d/codabar.ts";
+import itf from "./1d/itf.ts";
 
-type CodeTypes = "upc_a" | "ean_13" | "ean_8" | "code_128" | "code_93" | "code_39";
+type CodeTypes = "upc_a" | "ean_13" | "ean_8" | "code_128" | "code_93" | "code_39" | "codabar" | "itf";
 
 export default class TsBarcodeGenerator {
   public static generate(code: string, type: CodeTypes): string {
