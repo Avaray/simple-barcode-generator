@@ -29,7 +29,7 @@ Created to be easy to use, lightweight, and compatible with [Tailwind CSS](Tailw
 
 ## Why you shouldn't use this library
 
-- It has not been battle-tested yet.
+- It has not been battle-tested yet. Might have bugs.
 - Whether the project will be developed further depends on my willingness to work.
 
 ## Idea
@@ -38,11 +38,6 @@ Among the libraries available on [NPM](https://www.npmjs.com/), none met my need
 [tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking), others required complex configurations
 just to generate decent looking SVG, and some applied colors that couldn’t be easily overridden with Tailwind. So, I
 decided to create my own library.
-
-## Where it can be used
-
-I see potential in applications related to [loyalty cards](https://en.wikipedia.org/wiki/Loyalty_program). Generating
-codes on the client side can slightly reduce the load on servers.
 
 ## Usage
 
