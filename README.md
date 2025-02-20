@@ -47,9 +47,9 @@ decided to create my own library.
 #### Common
 
 ```ts
-import TsBarcodeGenerator from "simple-barcode-generator";
+import SvgBarcodeGenerator from "svg-barcode-generator";
 
-const barcode = TsBarcodeGenerator.generate("7423522549551", "ean_13");
+const barcode = SvgBarcodeGenerator.generate("7423522549551", "ean_13");
 
 console.log(barcode);
 ```
@@ -57,10 +57,10 @@ console.log(barcode);
 #### React + TailwindCSS
 
 ```ts
-import TsBarcodeGenerator from "simple-barcode-generator";
+import SvgBarcodeGenerator from "svg-barcode-generator";
 
 export const YourComponent = () => {
-  const barcode = TsBarcodeGenerator.generate("7423522549551", "ean_13");
+  const barcode = SvgBarcodeGenerator.generate("7423522549551", "ean_13");
   return (
     <div className="p-6 bg-white fill-current text-black">
       <div dangerouslySetInnerHTML={{ __html: barcode }} />
