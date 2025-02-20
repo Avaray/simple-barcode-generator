@@ -1,5 +1,5 @@
 {
-  "name": "simple-barcode-generator",
+  "name": "svg-barcode-generator",
   "description": "Barcode Generator compatible with Mobile, Browsers and JavaScript Runtimes",
   "version": "1.0.0",
   "type": "module",
@@ -18,15 +18,28 @@
     "dist"
   ],
   "keywords": [
+    "1d",
     "barcode",
+    "codabar",
     "code-128",
+    "code-39",
+    "code-93",
     "code",
     "code128",
+    "code39",
+    "code93",
     "ean-13",
+    "ean-8",
     "ean",
     "ean13",
+    "ean8",
     "generator",
+    "interleaved2of5",
+    "itf",
+    "svg",
     "typescript",
+    "upc-a",
+    "upc-e",
     "upc"
   ],
   "author": {
@@ -37,6 +50,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Avaray/simple-barcode-generator"
+    "url": "https://github.com/Avaray/svg-barcode-generator"
   }
 }
