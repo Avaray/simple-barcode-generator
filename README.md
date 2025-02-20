@@ -75,6 +75,12 @@ export const YourComponent = () => {
 - [Barcode Symbology](https://www.scandit.com/products/barcode-scanning/symbologies)
 - [Wikipedia.org/Barcode](https://en.wikipedia.org/wiki/Barcode)
 
+## TODO
+
+- [ ] Check ean_13 (seems to be broken)
+- [ ] Add support for upc_e (the last one of planned 1D formats)
+- [ ] Add automatic testing
+
 ## Support the project
 
 If you see potential in this project and want to help - feel free to contribute.
